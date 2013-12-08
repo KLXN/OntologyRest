@@ -1,0 +1,84 @@
+\documentclass{llncs}
+
+\usepackage[T1]{fontenc}
+\usepackage{inconsolata}
+\usepackage[polish]{babel}
+\usepackage[utf8]{inputenc}
+
+\usepackage{color}
+
+\definecolor{pblue}{rgb}{0.13,0.13,1}
+\definecolor{pgreen}{rgb}{0,0.5,0}
+\definecolor{pred}{rgb}{0.9,0,0}
+\definecolor{pgrey}{rgb}{0.46,0.45,0.48}
+
+\usepackage{graphicx}
+\usepackage{listings}
+\lstset{language=Java,
+  showspaces=false,
+  showtabs=false,
+  breaklines=true,
+  showstringspaces=false,
+  breakatwhitespace=true,
+  commentstyle=\color{pgreen},
+  keywordstyle=\color{pblue},
+  stringstyle=\color{pred},
+  basicstyle=\ttfamily\small,
+}
+
+\lstset{
+  literate={ą}{{\k{a}}}1
+           {ć}{{\'c}}1
+           {ę}{{\k{e}}}1
+           {ó}{{\'o}}1
+           {ń}{{\'n}}1
+           {ł}{{\l{}}}1
+           {ś}{{\'s}}1
+           {ź}{{\'z}}1
+           {ż}{{\.z}}1
+           {Ą}{{\k{A}}}1
+           {Ć}{{\'C}}1
+           {Ę}{{\k{E}}}1
+           {Ó}{{\'O}}1
+           {Ń}{{\'N}}1
+           {Ł}{{\L{}}}1
+           {Ś}{{\'S}}1
+           {Ź}{{\'Z}}1
+           {Ż}{{\.Z}}1
+}
+
+
+\begin{document}
+
+
+\title{Opracowanie i implementacja podstaw optymalnego przechowywania i transferowania danych medycznych (ontologie)}
+
+\author{Patryk Bąk, Marek Kendziorek, Wojciech Inglot}
+
+\institute{AGH Kraków, 2013}
+\maketitle
+
+
+\include{abstrakt}
+
+\begin{multicols}{2}
+
+\include{Wstep}
+\include{implementacja}
+\include{podsumowanie}
+
+
+\end{multicols}
+
+\section*{Acknowledgments}\label{sec:Acknowledgments}
+
+Authors would like to thank YYYYY.
+
+\begin{thebibliography}{1}
+
+\bibitem{Einstein}
+A. Einstein, On the movement of small particles suspended in stationary liquids required by the molecular-kinetic theory of heat, Annalen der Physik 17, pp. 549-560, 1905.
+
+\end{thebibliography}
+
+\end{document}
