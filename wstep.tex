@@ -4,6 +4,42 @@
 \subsection{Ontologia}
 \label{sec:ont}
 
+Ontologia jest formalną reprezentacją pewnej dziedziny wiedzy. Składają się na nią zapis zbiorów pojęć i relacji między nimi. Zapis ten tworzy schemat pojęciowy, który jest opisem danej dziedziny wiedzy. Może służyć jednocześnie jako podstawa do wnioskowania o właściwości opisywanych ontologią pojęć.	
+
+Pod pojęciem ontologii mogą się kryć różne struktury wiedzy. Ich przeznaczenie czy zakres stosowania może być wieloraki.
+
+Ontologie możemy podzielić ze względu na stopień ich formalizacji:
+\begin{itemize}
+\item nieformalne
+	\begin{itemize}
+		\item predefiniowane słownictow
+		\item słowniki
+		\item tezarusy
+		\item taksonomie
+	\end{itemize}
+\item formalne
+	\begin{itemize}
+		\item ontologie oparte na danych
+		\item ontologie oparte na logice
+	\end{itemize}
+\end{itemize}
+
+Podział następuje także ze względu na zakres stosowania:
+\begin{itemize}
+\item ontologie wysokiego poziomu (\textit{upper ontologies})
+\item ontologie dziedzinowe (\textit{domain ontologies})
+\item ontologie aplikacyjne
+\end{itemize}
+
+Istnieje szereg języków pozwalających na zapis lub wspierających ontologie:
+\begin{itemize}
+\item OWL (\textit{Ontology Web Language})
+\item RDF (\textit{Resource Description Framework})
+\item RDF Vocabulary Description Language (RDF Schema, RDFS)
+\item OCML (Operational Conceptual Modeling Language)
+\item XML (Extensible Markup Language)
+\end{itemize}
+
 \subsection{OWL}
 \label{sec:owl}
 
@@ -40,5 +76,5 @@ Wszystkie powyższe atrybuty są częścią specyfikacji OWL Lite.
 
 REST jest protokołem komunikacji między aplikacjami, który tak naprawdę jest tylko pewną dodatkową warstwą nałożoną na protokół HTTP. Budowanie zapytań restowych z poziomu języków programowania jest tak samo proste, jak zrozumienie działania protokołu HTTP. Istnieje wiele bibliotek i prostych frameworków do budowania serwisów, odbierających i wysyłających zapytania HTTP. Należą do nich np Jersey-RS, czy zbudowana na jego bazie trochę większa biblioteka Apache CXF. Biblioteka Fuserki, będąca częścią specyfikacji Apache Jena oferuje możliwość transferu danych właśnie protokołem REST, przy użyciu języka zapytań SPAQRL. 
 
-Ze względu na swoją prostotę i oparcie o standard HTT, wybór tego protokołu jako sposobu komunikacji między aplikacjami jest bardzo dobrą decyzją. Umożliwia to znakomitą skalowalność naszego systemu, poprzez rozdzielenie go na szereg indywidualnych aplikacji, które nie muszą być napisane przy użyciu tej samej technologii, muszą jedynie współdzielić tą metodę komunikacji oraz ewentualnie sposób serializacji danych.
+Ze względu na swoją prostotę i oparcie o standard HTTP, wybór tego protokołu jako sposobu komunikacji między aplikacjami jest bardzo dobrą decyzją. Umożliwia to znakomitą skalowalność naszego systemu, poprzez rozdzielenie go na szereg indywidualnych aplikacji, które nie muszą być napisane przy użyciu tej samej technologii, muszą jedynie współdzielić tą metodę komunikacji oraz ewentualnie sposób serializacji danych.
 
