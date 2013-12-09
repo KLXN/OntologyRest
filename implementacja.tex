@@ -10,3 +10,50 @@ Ontology API biblioteki Apache Jena pozwala między innymi na budowanie oraz imp
 
 \subsection{Transfer danych}
 \label{sec:transfer}
+
+W projekcie uruchomiony został serwer HTTP Fuseki. Pozwala on na przechowywanie i udostepnienie danych wczytanych z plikow OWL poprzez zapytania HTTP. W jego wewnętrznej bazie danych budowane są grafu do których aplikacje klienckie odwołują się w zapytania SPARQL.
+
+\subsubsection{Instalacja}
+
+~Instalacja Jeny i Fuseki ogranicza się do dodania do zmiennych środowiskowych ścieżek do paczek.
+\begin{lstlisting}
+export JENA= /Users/XXXX/Fuseki/apache-jena-2.11.0/
+export FUSEKI= /Users/XXXX/Fuseki/jena-fuseki-1.0.0/
+\end{lstlisting}
+
+\subsubsection{Uruchomienie serwera}
+
+~Standardowo serwer FUSEKI uruchamiany jest pod wirtualną domeną " localhost " i na porcie 3030.
+
+Uruchomienie serwera FUSEKI:
+\begin{lstlisting}
+./fuseki-server --update --loc=/Users/~/MyTDB/ /ds &
+\end{lstlisting}
+
+\subsubsection{Załadowanie pliku z ontologią}
+
+~Załadowania pliku OWL (poprzez konsolową komendę):
+
+\begin{lstlisting}
+./s-put http://localhost:3030/ds/data default /Users/XXXX/RIMV3OWL.owl
+\end{lstlisting}
+
+\subsubsection{Tworzenie zapytania SPARQL}
+
+~Wysłanie zapytania SPARQL wypisującego "koncepty" z załadowanego grafu:
+
+\begin{enumerate}
+\item Tworzenie zapytania.
+\begin{lstlisting}
+select distinct ?Concept where {[] a ?Concept}
+\end{lstlisting}
+\item Tworzenie zapytania HTTP POST, gdzie:
+- jako URI podajemy sufix prowadzący do punktu końcowego (eng. endpoint) i doklajemy końcówkę /query
+- w parametrze POST/GET "query" podajemy stworzone zapytanie 
+- opcjonalne parametry: output (np. "json"), default-graph-uri
+\item W efekcie otrzymujemy zapytanie (dla punktu końcowego "ds":
+\end{enumerate}
+
+\begin{lstlisting}
+http://localhost:3030/ds/sparql? query=select+distinct++%3FConcept +where+%7B%5B%5D+a+%3FConcept%7D &default-graph-uri= &output=json
+\end{lstlisting}
