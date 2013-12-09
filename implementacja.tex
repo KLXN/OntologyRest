@@ -48,9 +48,11 @@ Uruchomienie serwera FUSEKI:
 select distinct ?Concept where {[] a ?Concept}
 \end{lstlisting}
 \item Tworzenie zapytania HTTP POST, gdzie:
-- jako URI podajemy sufix prowadzący do punktu końcowego (eng. endpoint) i doklajemy końcówkę /query
-- w parametrze POST/GET \quotedblbase query\textquotedblright podajemy stworzone zapytanie 
-- opcjonalne parametry: output (np. \quotedblbase json\textquotedblright ), default-graph-uri
+\begin{itemize}
+\item jako URI podajemy sufix prowadzący do punktu końcowego (eng. endpoint) i doklajemy końcówkę /query
+\item w parametrze POST/GET \quotedblbase query\textquotedblright podajemy stworzone zapytanie 
+\item opcjonalne parametry: output (np. \quotedblbase json\textquotedblright ), default-graph-uri
+\end{itemize}
 \item W efekcie otrzymujemy zapytanie (dla punktu końcowego \quotedblbase ds\textquotedblright :
 \end{enumerate}
 
