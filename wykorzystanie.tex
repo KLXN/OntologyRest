@@ -3,7 +3,7 @@
 
 Poniżej zamieszczone są przykładowe zapytania sparql do pobierania informacji z grafów przedstawionych na rysunku 1 i rysunku 2.
 
-\subsubsection{Wyszukiwanie węzłów-rodzeństw (poprzez użycie \quotedblbase właściwości sameAs\textquotedblright }
+\subsubsection{Wyszukiwanie węzłów-rodzeństw (poprzez użycie \quotedblbase relacji sameAs\textquotedblright }
 
 Zapytanie:
 \begin{lstlisting}
@@ -53,3 +53,50 @@ Wynik:
 
 \end{lstlisting}
 
+
+
+
+
+
+
+\subsubsection{Wyszukiwanie węzłów podrzędnych do węzła \quotedblbase Polska\textquotedblright, relacja: \quotedblbase isPartOf\textquotedblright }
+
+Zapytanie:
+\begin{lstlisting}
+PREFIX rdf: <http://www.w3.org/ 1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/ 2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/ 2001/XMLSchema#>
+PREFIX rdfs: <http://www.w3.org/ 2000/01/rdf-schema#>
+PREFIX hl7: <http://sim.ontology/HL7#>
+SELECT ?subject
+	WHERE { ?subject hl7:isPartOf hl7:Polska }
+\end{lstlisting}
+
+Wynik:
+\begin{lstlisting}
+{
+  "head": {
+    "vars": [ "subject" ]
+  } ,
+  "results": {
+    "bindings": [
+      {
+        "subject": { "type": "uri" , "value": "http://sim.ontology/ HL7#Krakow" }
+      } ,
+      {
+        "subject": { "type": "uri" , "value": "http://sim.ontology/ HL7#Warszawa" }
+      } ,
+      {
+        "subject": { "type": "uri" , "value": "http://sim.ontology/ HL7#Mazowsze" }
+      } ,
+      {
+        "subject": { "type": "uri" , "value": "http://sim.ontology/ HL7#Malopolska" }
+      } ,
+      {
+        "subject": { "type": "uri" , "value": "http://sim.ontology/ HL7#Podkarpacie" }
+      }
+    ]
+  }
+}
+
+\end{lstlisting}
