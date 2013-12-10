@@ -59,7 +59,7 @@ Wynik:
 
 
 
-\subsubsection{Wyszukiwanie węzłów podrzędnych do węzła \quotedblbase Polska\textquotedblright, relacja: \quotedblbase isPartOf\textquotedblright }
+\subsubsection{Wyszukiwanie miast (węzły typu hl7:EntityCity) podrzędnych do węzła \quotedblbase Polska\textquotedblright, relacja: \quotedblbase isPartOf\textquotedblright }
 
 Zapytanie:
 \begin{lstlisting}
@@ -69,7 +69,10 @@ PREFIX xsd: <http://www.w3.org/ 2001/XMLSchema#>
 PREFIX rdfs: <http://www.w3.org/ 2000/01/rdf-schema#>
 PREFIX hl7: <http://sim.ontology/HL7#>
 SELECT ?subject
-	WHERE { ?subject hl7:isPartOf hl7:Polska }
+	WHERE {      
+		?subject rdf:type hl7:EntityCity .
+		?subject hl7:isPartOf hl7:Polska
+	}
 \end{lstlisting}
 
 Wynik:
@@ -85,18 +88,10 @@ Wynik:
       } ,
       {
         "subject": { "type": "uri" , "value": "http://sim.ontology/ HL7#Warszawa" }
-      } ,
-      {
-        "subject": { "type": "uri" , "value": "http://sim.ontology/ HL7#Mazowsze" }
-      } ,
-      {
-        "subject": { "type": "uri" , "value": "http://sim.ontology/ HL7#Malopolska" }
-      } ,
-      {
-        "subject": { "type": "uri" , "value": "http://sim.ontology/ HL7#Podkarpacie" }
       }
     ]
   }
 }
+
 
 \end{lstlisting}
