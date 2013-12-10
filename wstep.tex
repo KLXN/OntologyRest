@@ -68,7 +68,7 @@ Wszystkie powyższe atrybuty są częścią specyfikacji OWL Lite.
 
 \subsection{Protege}
 \label{sec:protege}
-Protege jest otwarto-źródłowym narzędziem stworzonym przez Stanford Medical Informatics. Jak przy większości narzędzi modelujących, architektura Protege jest przejrzyście podzielona na dwie części - model i widok. Modele są wewnętrzną reprezentacją mechanizmy ontologii i baz wiedzy. Widoki zapewniają interfejs użytkownika, dzięki któremu można wyświetlać i manipulować modelami.
+Protege jest otwarto-źródłowym narzędziem stworzonym przez Stanford Medical Informatics \cite{26}. Jak przy większości narzędzi modelujących, architektura Protege jest przejrzyście podzielona na dwie części - model i widok. Modele są wewnętrzną reprezentacją mechanizmy ontologii i baz wiedzy. Widoki zapewniają interfejs użytkownika, dzięki któremu można wyświetlać i manipulować modelami.
 
 Protege posiada możliwość wczytania, edycji i zapisywania w wielu popularnych dla ontologii formatach, np:
 \begin{itemize}
@@ -109,3 +109,42 @@ Dzięki niemu możemu w ustandaryzowany sposób pobierać lub manipulowac danymi
 
 ~Fuseki jest jednym z subsystemów systemu Jena. Twórcy zadbali o to żeby serwer SPARQL udało się włączyć nie tylko poprzez konsole, ale również bezpośrednio z aplikacji JAVA z wykorzystaniem biblioteki Jena.
 
+\subsection{HL7}
+\label{sec:hl7}
+
+HL7 (Health Level 7) jest organizacją ustanawiającą standardy, akredytowaną przez American National Standards Insitute (ANSI). Opracowali protokół komunikacyjny szeroko używany w USA, obecnie coraz częściej rozpoznawany i wykorzystywany w pozostałych częściach świata.
+
+RIM (Reference Informational Model) został wykorzystany w trzeciej wersji HL7 (HL7 Version 3) w celu standaryzacji powiązań pomiędzy danymi przenoszonymi przez wiadomości protokołu HL7.
+
+Diagram UML na rysunku \ref{fig:hl7rim} przedstawia podstawowe klasy istniejące w RIM.
+
+RIM opiera się na pięciu podstawowych założeniach:
+\begin{itemize}
+	\item Każde zdarzenie jest opisane przez klasę Act
+	\begin{itemize}
+		\item zdarzeniem może być: procedura, obserwacja, dostawa zapasów, rejestracja, itp.
+	\end{itemize}
+ 	\item Relacje pomiędzy zdarzeniami opisuje klasa ActRelationship
+ 	\item Klasa Participation definiuje kontekst wystąpienia zdarzenia
+ 	\begin{itemize}
+ 		\item autor, wykonujący, podmiot, lokalizacja itp.
+ 	\end{itemize}
+ 	\item uczestnicy zdarzenia są opisanie przez klasę Role
+ 	\begin{itemize}
+ 		\item pacjent, dostawca, praktykant, pracownik itp.
+ 	\end{itemize}
+  	\item role są reprezentowane przez klasę Entity
+  	\begin{itemize}
+ 		\item osoby, organizacja, materiały, miejsca, urządzenia, itp.
+ 	\end{itemize}
+\end{itemize}
+\newpage
+\end{multicols}
+\begin{figure}[p]
+	\centering
+	\includegraphics[scale=0.2, angle=90]{pics/HL7}
+	\caption{HL7 RIM}
+	\label{fig:hl7rim}
+\end{figure}
+\begin{multicols}{2}
+\newpage
