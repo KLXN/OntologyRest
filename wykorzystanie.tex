@@ -95,3 +95,38 @@ Wynik:
 
 
 \end{lstlisting}
+
+\subsubsection{Wyszukiwanie miasta w którym mieszka dana osoba}
+
+Zapytanie:
+\begin{lstlisting}
+PREFIX rdf: <http://www.w3.org/ 1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/ 2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/ 2001/XMLSchema#>
+PREFIX rdfs: <http://www.w3.org/ 2000/01/rdf-schema#>
+PREFIX hl7: <http://sim.ontology/HL7#>
+SELECT ?city ?country
+	WHERE {
+		hl7:Wojciech_Inglot hl7:livesIn ?city .
+		?city hl7:isPartOf ?region .
+		?region hl7:isPartOf ?country
+	           }
+\end{lstlisting}
+
+Wynik:
+\begin{lstlisting}
+{
+  "head": {
+    "vars": [ "city" , "country" ]
+  } ,
+  "results": {
+    "bindings": [
+      {
+        "city": { "type": "uri" , "value": "http://sim.ontology/ HL7#Krakow" } ,
+        "country": { "type": "uri" , "value": "http://sim.ontology/ HL7#Polska" }
+      }
+    ]
+  }
+}
+\end{lstlisting}
+
