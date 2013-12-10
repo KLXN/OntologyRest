@@ -3,15 +3,53 @@
 
 Poniżej zamieszczone są przykładowe zapytania sparql do pobierania informacji z grafów przedstawionych na rysunku 1 i rysunku 2.
 
-\subsubsection{tytul-zapytania}
+\subsubsection{Wyszukiwanie węzłów-rodzeństw (poprzez użycie \quotedblbase właściwości sameAs\textquotedblright }
 
 Zapytanie:
 \begin{lstlisting}
-zapytanie
+PREFIX rdf:     <http://www.w3.org/ 1999/02/22-rdf-syntax-ns#> 
+PREFIX rdfs:    <http://www.w3.org/ 2000/01/rdf-schema#>
+PREFIX owl:     <http://www.w3.org/ 2002/07/owl#>
+PREFIX HL7: <http://sim.ontology/HL7#>
+SELECT ?subject ?object
+	WHERE { ?subject owl:sameAs ?object }
 \end{lstlisting}
 
 Wynik:
 \begin{lstlisting}
-zapytanie
+{
+  "head": {
+    "vars": [ "subject" , "object" ]
+  } ,
+  "results": {
+    "bindings": [
+      {
+        "subject": { "type": "uri" , "value": "http://sim.ontology/ HL7#Krakow" } ,
+        "object": { "type": "uri" , "value": "http://sim.ontology/ HL7#Warszawa" }
+      } ,
+      {
+        "subject": { "type": "uri" , "value": "http://sim.ontology/ HL7#Marek_Kendziorek" } ,
+        "object": { "type": "uri" , "value": "http://sim.ontology/ HL7#Wojciech_Inglot" }
+      } ,
+      {
+        "subject": { "type": "uri" , "value": "http://sim.ontology/ HL7#Patryk_Bak" } ,
+        "object": { "type": "uri" , "value": "http://sim.ontology/ HL7#Wojciech_Inglot" }
+      } ,
+      {
+        "subject": { "type": "uri" , "value": "http://sim.ontology/ HL7#Mazowsze" } ,
+        "object": { "type": "uri" , "value": "http://sim.ontology/ HL7#Malopolska" }
+      } ,
+      {
+        "subject": { "type": "uri" , "value": "http://sim.ontology/ HL7#Mazowsze" } ,
+        "object": { "type": "uri" , "value": "http://sim.ontology/ HL7#Podkarpacie" }
+      } ,
+      {
+        "subject": { "type": "uri" , "value": "http://sim.ontology/ HL7#Malopolska" } ,
+        "object": { "type": "uri" , "value": "http://sim.ontology/ HL7#Podkarpacie" }
+      }
+    ]
+  }
+}
+
 \end{lstlisting}
 
