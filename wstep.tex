@@ -82,10 +82,30 @@ Protege posiada możliwość wczytania, edycji i zapisywania w wielu popularnych
 \subsection{SPARQL}
 \label{sec:sparql}
 
+~SPARQL jest językiem zapytań RDF, czyli pozwala na wyciaganie lub manipulowanie danymi w bazie danych składującej dane w formacie RDF (eng. Resource Description Framework). SPARQL pozwala również na pracę na danych w formacie pochodnym od formatu RDF, np. OWL, jednak z pewnymi ograniczeniami. SPARQL operując na danych w formacie OWL musi pominąć elementy języka które nie mają przełożenia na format RDF.
+
+~Konstrukcja zapytań opiera się o zestaw trzech parametrów:
+\begin{itemize}
+\item spójnika (eng. conjuction)
+\item alternatywy (eng. disjunction)
+\item wzorzec (opcjonalnie) (eng. pattern)
+\end{itemize}
+
+Idea jaka przyświecała twórcom SPARQL określała go jako przełom w tworzeniu internetu czytelnego dla maszyn. Jeżeli format ten przyjmie się jako standard otrzymamy uniwersalny sposób otrzymywania informacji z internetowych \quotedblbase skupisk\textquotedblright  danych, co da nowe możliwości łączenia danych z różnych źródeł.
+
+
 \subsection{REST}
 \label{sec:rest}
 
 REST jest protokołem komunikacji między aplikacjami, który tak naprawdę jest tylko pewną dodatkową warstwą nałożoną na protokół HTTP. Budowanie zapytań restowych z poziomu języków programowania jest tak samo proste, jak zrozumienie działania protokołu HTTP. Istnieje wiele bibliotek i prostych frameworków do budowania serwisów, odbierających i wysyłających zapytania HTTP. Należą do nich np Jersey-RS, czy zbudowana na jego bazie trochę większa biblioteka Apache CXF. Biblioteka Fuserki, będąca częścią specyfikacji Apache Jena oferuje możliwość transferu danych właśnie protokołem REST, przy użyciu języka zapytań SPAQRL. 
 
 Ze względu na swoją prostotę i oparcie o standard HTTP, wybór tego protokołu jako sposobu komunikacji między aplikacjami jest bardzo dobrą decyzją. Umożliwia to znakomitą skalowalność naszego systemu, poprzez rozdzielenie go na szereg indywidualnych aplikacji, które nie muszą być napisane przy użyciu tej samej technologii, muszą jedynie współdzielić tą metodę komunikacji oraz ewentualnie sposób serializacji danych.
+
+\subsection{Fuseki}
+\label{sec:rest}
+
+~Fuseki jest to serwer HTTP w standardzie REST przyjmujący zapytania HTTP zawierające w parametrach zapytania SPARQL.
+Dzięki niemu możemu w ustandaryzowany sposób pobierać lub manipulowac danymi w modelu OWL lub RDF.
+
+~Fuseki jest jednym z subsystemów systemu Jena. Twórcy zadbali o to żeby serwer SPARQL udało się włączyć nie tylko poprzez konsole, ale również bezpośrednio z aplikacji JAVA z wykorzystaniem biblioteki Jena.
 
