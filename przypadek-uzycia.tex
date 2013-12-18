@@ -15,10 +15,13 @@ Zaprojektowany system będzie wykorzystywany w sposób pokazany na Rys. \ref{fig
 \subsection{Pobranie informacji o pacjencie}
 \label{cha:patientinfo-usecase}
 
-[opis]
+\subsubsection{Opis}
+Przypadek użycia \quotedblbase Pobranie informacji o pacjencie\textquotedblright (Rys. \ref{fig:usecase}) przedstawia jedną z możliwych interakcji klienta (w tym wypadku lekarza) z systemem. Klient ma możliwość przefiltrowania pacjentów wg. miast i lekarzy prowadzących (lekarz może mieć pacjentów w róznych miastach).
 
-[schemat - OWL]
+\subsubsection{Zapytania SPARQL}
+Przykładowe zapytanie użyte do pobrania pacjentów z danego miasta:
+\begin{lstlisting}
+SELECT ?patient WHERE { ?patient hl7:livesIn hl7:Nazwa_miasta }
+\end{lstlisting}
 
-[zapytanie sparql]
-
-[metoda z klienta JAVA]
+\subsubsection{Implementacja po strone klienta - JAVA}
