@@ -4,7 +4,7 @@
 \subsection{Ontologia}
 \label{sec:ont}
 
-Ontologia jest formalną reprezentacją pewnej dziedziny wiedzy. Składają się na nią zapis zbiorów pojęć i relacji między nimi. Zapis ten tworzy schemat pojęciowy, który jest opisem danej dziedziny wiedzy. Może służyć jednocześnie jako podstawa do wnioskowania o właściwości opisywanych ontologią pojęć.	
+Ontologia jest formalną reprezentacją pewnej dziedziny wiedzy. Składają się na nią zapis zbiorów pojęć i relacji między nimi. Zapis ten tworzy schemat pojęciowy, który jest opisem danej dziedziny wiedzy. Może służyć jednocześnie jako podstawa do wnioskowania o właściwości opisywanych ontologią pojęć.	 \cite {7}
 
 Pod pojęciem ontologii mogą się kryć różne struktury wiedzy. Ich przeznaczenie czy zakres stosowania może być wieloraki.
 
@@ -43,7 +43,7 @@ Istnieje szereg języków pozwalających na zapis lub wspierających ontologie:
 \subsection{OWL}
 \label{sec:owl}
 
-OWL (Ontology Web Language) jest opartym na składni XML językiem służącym do opisu ontologii. Stanowi on rozszerzenie języka RDF (Resource Definition Language). Istnieją 3 odmiany OWL: OWL Lite, OWL DL oraz OWL Full. W 2004 roku język ten został uznany za standard przez organizację W3C.
+OWL (Ontology Web Language) jest opartym na składni XML językiem służącym do opisu ontologii. Stanowi on rozszerzenie języka RDF (Resource Definition Language). Istnieją 3 odmiany OWL: OWL Lite, OWL DL oraz OWL Full. W 2004 roku język ten został uznany za standard przez organizację W3C. \cite {8}
 
 OWL został stworzony do przetwarzania informacji o obiektach oraz relacji między nimi, nie do przechowywania tych informacji w formie czytelnej dla człowieka. OWL jest zbudowany na bazie RDF, tak więc języki te są ze sobą w pełni kompatybilne. OWL posiada jednak znacznie mocniejszą składnię.
 
@@ -97,7 +97,7 @@ Idea jaka przyświecała twórcom SPARQL określała go jako przełom w tworzeni
 \subsection{REST}
 \label{sec:rest}
 
-REST jest protokołem komunikacji między aplikacjami, który tak naprawdę jest tylko pewną dodatkową warstwą nałożoną na protokół HTTP. Budowanie zapytań restowych z poziomu języków programowania jest tak samo proste, jak zrozumienie działania protokołu HTTP. Istnieje wiele bibliotek i prostych frameworków do budowania serwisów, odbierających i wysyłających zapytania HTTP. Należą do nich np Jersey-RS, czy zbudowana na jego bazie trochę większa biblioteka Apache CXF. Biblioteka Fuserki, będąca częścią specyfikacji Apache Jena oferuje możliwość transferu danych właśnie protokołem REST, przy użyciu języka zapytań SPAQRL. 
+REST jest protokołem komunikacji między aplikacjami, który tak naprawdę jest tylko pewną dodatkową warstwą nałożoną na protokół HTTP. Budowanie zapytań restowych z poziomu języków programowania jest tak samo proste, jak zrozumienie działania protokołu HTTP. Istnieje wiele bibliotek i prostych frameworków do budowania serwisów, odbierających i wysyłających zapytania HTTP. Należą do nich np Jersey-RS, czy zbudowana na jego bazie trochę większa biblioteka Apache CXF. Biblioteka Fuserki, będąca częścią specyfikacji Apache Jena oferuje możliwość transferu danych właśnie protokołem REST, przy użyciu języka zapytań SPAQRL.  \cite{1}
 
 Ze względu na swoją prostotę i oparcie o standard HTTP, wybór tego protokołu jako sposobu komunikacji między aplikacjami jest bardzo dobrą decyzją. Umożliwia to znakomitą skalowalność naszego systemu, poprzez rozdzielenie go na szereg indywidualnych aplikacji, które nie muszą być napisane przy użyciu tej samej technologii, muszą jedynie współdzielić tą metodę komunikacji oraz ewentualnie sposób serializacji danych.
 
@@ -112,11 +112,11 @@ Dzięki niemu możemu w ustandaryzowany sposób pobierać lub manipulowac danymi
 \subsection{HL7}
 \label{sec:hl7}
 
-HL7 (Health Level 7) jest organizacją ustanawiającą standardy, akredytowaną przez American National Standards Insitute (ANSI). Opracowali protokół komunikacyjny szeroko używany w USA, obecnie coraz częściej rozpoznawany i wykorzystywany w pozostałych częściach świata.
+HL7 (Health Level 7) jest organizacją ustanawiającą standardy, akredytowaną przez American National Standards Insitute (ANSI). Opracowali protokół komunikacyjny szeroko używany w USA, obecnie coraz częściej rozpoznawany i wykorzystywany w pozostałych częściach świata. \cite {14}
 
-RIM (Reference Informational Model) został wykorzystany w trzeciej wersji HL7 (HL7 Version 3) w celu standaryzacji powiązań pomiędzy danymi przenoszonymi przez wiadomości protokołu HL7.
+RIM (Reference Informational Model) został wykorzystany w trzeciej wersji HL7 (HL7 Version 3) w celu standaryzacji powiązań pomiędzy danymi przenoszonymi przez wiadomości protokołu HL7. \cite {16}
 
-Diagram UML na rysunku \ref{fig:hl7rim} przedstawia podstawowe klasy istniejące w RIM.
+Diagram UML na rysunku \ref{fig:hl7rim} przedstawia podstawowe klasy istniejące w RIM. \cite {15}
 
 RIM opiera się na pięciu podstawowych założeniach:
 \begin{itemize}
