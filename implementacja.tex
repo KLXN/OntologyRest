@@ -2,6 +2,16 @@
 \label{cha:impl}
 
 Rozwiązanie zaprezentowane w niniejszym artykule zostało napisane w języku Java, z wykorzystaniem Ontology API biblioteki Apache Jena. Biblioteka ta pozwala na mapowanie różnego rodzaju reprezentacji ontologii na klasy Java. Do transferowania naszych danych wykorzystamy bibliotekę Apache CXF, a dokładniej jej moduł REST, który pozwoli nam na przesyłanie zserializowanych danych przez protokół HTTP.
+Schema klienta został przedstawiony na Rys. \ref{fig:javaclient}
+
+\end{multicols}
+\begin{figure}[p]
+	\centering
+	\includegraphics[scale=0.2]{pics/Scheme}
+	\caption{Schemat klienta JAVA}
+	\label{fig:javaclient}
+\end{figure}
+\begin{multicols}{2}
 
 \subsection{Reprezentacja danych}
 \label{sec:persist}
